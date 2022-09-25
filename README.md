@@ -11,17 +11,17 @@ This plugin has dependencies on the following plugins:
 - [Timber Library](https://nl.wordpress.org/plugins/timber-library/)
 
 ### Creating blocks
-Creating blocks is easy. After installing and activating the plugin, create a subdirectory in your theme called 'views' and another subdirectory in that called 'blocks'.
+Creating blocks is easy. After installing and activating the plugin, create a subdirectory in your theme called 'templates' if it is not already present in your theme, and another subdirectory in that called 'blocks'.
 
 	- theme-directory
-	   └ views <directory>
+	   └ templates <directory>
 	     └ blocks <directory>
 	   functions.php
 	   style.css
 
 You can now start using Timber Meta Box Blocks to create Gutenberg Blocks!
 
-Add twig templates to the views/blocks directory that get and use Meta Box data. All Twig templates require a comment block with some data in it. Here's an example of a block WITHOUT meta box data:
+Add twig templates to the templates/blocks directory that get and use Meta Box data. All Twig templates require a comment block with some data in it. Here's an example of a block WITHOUT meta box data:
 
 	{#
 	  Title: Test Block
@@ -86,9 +86,9 @@ Simply set the render_callback setting in your code, or use the setting in the M
 
 <img src="/docs/using-as-render-callback.png" title="Enter the callback used by the plugin to render using Timber">
 
-### Timber views directory
+### Timber templates directory
 
-Timber will also have access to the twig files located in the `theme-directory/views` directory. This is pretty convenient for including: `{% include 'filename.twig' %}`, using of block files: `{% use 'filename.twig' %}`, importing macro files: `{% import 'filename.twig' as my_macros %}` or direct block rendering: `{{ block( 'blockname' , 'filename.twig'  ) }}`.
+Timber will also have access to the twig files located in the `theme-directory/templates` directory. This is pretty convenient for including: `{% include 'filename.twig' %}`, using of block files: `{% use 'filename.twig' %}`, importing macro files: `{% import 'filename.twig' as my_macros %}` or direct block rendering: `{{ block( 'blockname' , 'filename.twig'  ) }}`.
 
 ### Block variables
 The render_callback exposes a few important variables to the Timber template:
