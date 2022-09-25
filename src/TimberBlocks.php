@@ -76,7 +76,7 @@ function register_blocks( $meta_boxes ) {
 	// Get an array of directories containing blocks.
 	$directories = timber_block_directory_getter();
 
-	// Check whether ACF exists before continuing.
+	// Check whether Metabox.io exists before continuing.
 	foreach ( $directories as $dir ) {
 		// Sanity check whether the directory we're iterating over exists first.
 		if ( ! file_exists( \locate_template( $dir ) ) ) {
@@ -238,7 +238,7 @@ function register_blocks( $meta_boxes ) {
 
 				}
 
-				// Register the block with ACF.
+				// Register the block with Metabox.io.
 				$meta_boxes[ $slug ] = $data ;
 			}
 		}
