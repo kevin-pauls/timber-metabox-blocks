@@ -70,7 +70,7 @@ function default_fields_on_empty( $fields ) {
 }
 
 /**
- * Create blocks based on templates found in Timber's "views/blocks" directory
+ * Create blocks based on templates found in Timber's "templates/blocks" directory
  */
 function register_blocks( $meta_boxes ) {
 	// Get an array of directories containing blocks.
@@ -347,7 +347,7 @@ function timber_blocks_subdirectories( $directories ) {
  */
 function timber_block_directory_getter() {
 	// Get an array of directories containing blocks.
-	$directories = apply_filters( 'timber/mb-gutenberg-blocks-templates', array( 'views/blocks' ) );
+	$directories = apply_filters( 'timber/mb-gutenberg-blocks-templates', array( 'templates/blocks' ) );
 
 	// Check subfolders.
 	$subdirectories = timber_blocks_subdirectories( $directories );
