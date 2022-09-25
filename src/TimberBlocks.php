@@ -288,7 +288,7 @@ function timber_blocks_callback( $block, $is_preview = false, $post_id = 0 ) {
 	$context = apply_filters( 'timber/mb-gutenberg-blocks-data/' . $slug, $context );
 	$context = apply_filters( 'timber/mb-gutenberg-blocks-data/' . $block['id'], $context );
 
-	$paths = timber_acf_path_render( $slug, $is_preview, $is_example );
+	$paths = timber_metabox_path_render( $slug, $is_preview, $is_example );
 
 	\Timber::render( $paths, $context );
 }
@@ -300,7 +300,7 @@ function timber_blocks_callback( $block, $is_preview = false, $post_id = 0 ) {
  * @param bool   $is_preview Checks if preview.
  * @param bool   $is_example Checks if example.
  */
-function timber_acf_path_render( $slug, $is_preview, $is_example ) {
+function timber_metabox_path_render( $slug, $is_preview, $is_example ) {
 
 	$directories = timber_block_directory_getter();
 
